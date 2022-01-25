@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Sneakers</title>
+  </head>
+  <body>
+    <div class="side-bar">
+      <img class="icon-close" src="images/icon-close.svg" />
+      <ul>
+        <li>Collections</li>
+        <li>Men</li>
+        <li>Women</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+    <div class="backdrop"></div>
+    <header>
+      <nav>
+        <div class="left">
+          <img class="icon-menu" src="images/icon-menu.svg" />
+          <img class="logo" src="images/logo.svg" />
+        </div>
+        <div class="right">
+          <img src="images/icon-cart-black.svg" />
+          <img src="images/image-avatar.png" width="24" />
+        </div>
+      </nav>
+    </header>
+
+    <section class="main">
+      <img
+        src="images/image-product-1.jpg"
+        class="product-image"
+        width="325"
+        height="250"
+      />
+      <div class="navigation">
+        <img src="images/icon-previous.svg" id="prev-btn" />
+        <img src="images/icon-next.svg" id="next-btn" />
+      </div>
+    </section>
+
+    <article>
+      <p>
+        <span class="main-heading">SNEAKER COMPANY</span>
+        <br />
+        <span class="sub-heading">
+          Fall Limited Edition<br />
+          Sneakers
+        </span>
+        <br />
+
+        These low-profile sneakers are your perfect<br />
+        casual wear companion. Featuring a durable<br />
+        rubber outer sole, they'll withstand everything<br />
+        the weather can offer.
+      </p>
+    </article>
+    <section class="price">
+      <div>
+        <span class="current-price">$125.00</span>
+        <span class="discount">50%</span>
+      </div>
+      <span class="old-price"><strike>250</strike></span>
+    </section>
+
+    <section class="quantity">
+      <div>
+        <img class="icon-minus" src="images/icon-minus.svg" />
+        <p class="no-items">0</p>
+        <img class="icon-plus" src="images/icon-plus.svg" />
+      </div>
+      <button>
+        <img class="cart-icon" src="images/icon-cart.svg" /> Add to cart
+      </button>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
