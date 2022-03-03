@@ -16,11 +16,11 @@
     <div class="side-bar">
       <img class="icon-close" src="images/icon-close.svg" />
       <ul>
-        <li>Collections</li>
-        <li>Men</li>
-        <li>Women</li>
-        <li>About</li>
-        <li>Contact</li>
+        <li href="#">Collections</li>
+        <li href="#">Men</li>
+        <li href="#">Women</li>
+        <li href="#">About</li>
+        <li href="#">Contact</li>
       </ul>
     </div>
     <div class="backdrop"></div>
@@ -29,61 +29,83 @@
         <div class="left">
           <img class="icon-menu" src="images/icon-menu.svg" />
           <img class="logo" src="images/logo.svg" />
+          <div class="desktop-nav">
+            <div>
+              <ul>
+                <li href="#">Collections</li>
+                <li href="#">Men</li>
+                <li href="#">Women</li>
+                <li href="#">About</li>
+                <li href="#">Contact</li>
+              </ul>
+            </div>
+          </div>
         </div>
+
         <div class="right">
           <img src="images/icon-cart-black.svg" />
-          <img src="images/image-avatar.png" width="24" />
+          <img class="avatar" src="images/image-avatar.png" width="24" />
         </div>
       </nav>
     </header>
 
-    <section class="main">
-      <img
-        src="images/image-product-1.jpg"
-        class="product-image"
-        width="325"
-        height="250"
-      />
-      <div class="navigation">
-        <img src="images/icon-previous.svg" id="prev-btn" />
-        <img src="images/icon-next.svg" id="next-btn" />
-      </div>
-    </section>
+    <main>
+      <section class="main">
+        <div>
+          <img
+            src="images/image-product-1.jpg"
+            class="product-image"
+            width="325"
+            height="250"
+          />
+          <div class="sneak-pics">
+            <img src="images/image-product-1.jpg" width="75px" />
+            <img src="images/image-product-2.jpg" width="75px" />
+            <img src="images/image-product-3.jpg" width="75px" />
+            <img src="images/image-product-4.jpg" width="75px" />
+          </div>
+        </div>
+        <div class="navigation">
+          <img src="images/icon-previous.svg" id="prev-btn" />
+          <img src="images/icon-next.svg" id="next-btn" />
+        </div>
 
-    <article>
-      <p>
-        <span class="main-heading">SNEAKER COMPANY</span>
-        <br />
-        <span class="sub-heading">
-          Fall Limited Edition<br />
-          Sneakers
-        </span>
-        <br />
+        <article>
+          <p>
+            <span class="main-heading">SNEAKER COMPANY</span>
+            <br />
+            <span class="sub-heading">
+              Fall Limited Edition<br />
+              Sneakers
+            </span>
+            <br />
 
-        These low-profile sneakers are your perfect<br />
-        casual wear companion. Featuring a durable<br />
-        rubber outer sole, they'll withstand everything<br />
-        the weather can offer.
-      </p>
-    </article>
-    <section class="price">
-      <div>
-        <span class="current-price">$125.00</span>
-        <span class="discount">50%</span>
-      </div>
-      <span class="old-price"><strike>250</strike></span>
-    </section>
+            These low-profile sneakers are your perfect<br />
+            casual wear companion. Featuring a durable<br />
+            rubber outer sole, they'll withstand everything<br />
+            the weather can offer.
+          </p>
+          <div class="price">
+            <div>
+              <span class="current-price">$125.00</span>
+              <span class="discount">50%</span>
+            </div>
+            <span class="old-price"><strike>250</strike></span>
+          </div>
+          <div class="quantity">
+            <div>
+              <img class="icon-minus" src="images/icon-minus.svg" />
+              <p class="no-items">0</p>
+              <img class="icon-plus" src="images/icon-plus.svg" />
+            </div>
+            <button>
+              <img class="cart-icon" src="images/icon-cart.svg" /> Add to cart
+            </button>
+          </div>
+        </article>
+      </section>
+    </main>
 
-    <section class="quantity">
-      <div>
-        <img class="icon-minus" src="images/icon-minus.svg" />
-        <p class="no-items">0</p>
-        <img class="icon-plus" src="images/icon-plus.svg" />
-      </div>
-      <button>
-        <img class="cart-icon" src="images/icon-cart.svg" /> Add to cart
-      </button>
-    </section>
     <script src="script.js"></script>
   </body>
 </html>
