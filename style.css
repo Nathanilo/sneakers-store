@@ -24,6 +24,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0 1.1rem;
+  width: 100%;
 }
 
 nav .right {
@@ -68,7 +69,7 @@ nav .left img {
   padding: 0.6rem;
   cursor: pointer;
 }
-.sneak-pics {
+.sub-product_images {
   display: none;
 }
 .main .product-image {
@@ -130,6 +131,7 @@ article p {
   border-radius: 4px;
   padding: 0.2rem 0.5rem;
   font-size: 0.8rem;
+  font-weight: 700;
 }
 
 .quantity {
@@ -173,13 +175,14 @@ button img {
 }
 
 .side-bar {
+  opacity: 0;
   position: absolute;
   z-index: 100;
   background: white;
   width: 70%;
   height: 100%;
   transform: translateX(-1000px);
-  transition: transform 3000ms cubic-bezier(0, 0, 0.2, 1);
+  transition: transform, opacity 3000ms cubic-bezier(0, 0, 0.2, 1);
 }
 .side-bar ul {
   list-style: none;
@@ -195,8 +198,23 @@ button img {
   cursor: pointer;
   width: fit-content;
 }
-.side-bar li:hover {
-  border-bottom: 2px solid hsl(26, 100%, 55%);
+.side-bar li::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: hsl(26, 100%, 55%);
+  transition: width 300ms;
+}
+
+.side-bar li:hover::after {
+  width: 100%;
+  transition: width 300ms;
+}
+
+.side-bar li a {
+  text-decoration: none;
+  color: #0000007d;
 }
 .side-bar img {
   margin-top: 1.5rem;
@@ -213,11 +231,11 @@ button img {
 }
 
 .open-sidebar {
+  opacity: 100;
   transform: translateX(0);
   transition: transform 300ms cubic-bezier(0, 0, 0.2, 1);
 }
-
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .desktop-nav {
     display: flex;
   }
@@ -233,6 +251,22 @@ button img {
     font-weight: 600;
     color: #0000007d;
     cursor: pointer;
+  }
+  .desktop-nav ul li a {
+    text-decoration: none;
+    color: #0000007d;
+  }
+  .desktop-nav ul li::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: hsl(26, 100%, 55%);
+    transition: width 300ms;
+  }
+  .desktop-nav ul li:hover::after {
+    width: 100%;
+    transition: width 300ms;
   }
   .cart-avatar {
     display: flex;
@@ -257,13 +291,118 @@ button img {
   .navigation {
     display: none;
   }
-  .sneak-pics {
+  .sub-product_images {
     display: flex;
     justify-content: space-between;
     margin-top: 1.2rem;
   }
-  .sneak-pics img {
+  .sub-product_images img {
     border-radius: 0.5rem;
+  }
+  .sub-product_images img:hover {
+    border: 2px solid hsl(26, 100%, 55%);
+    background-color: #ffffff;
+    opacity: 50%;
+    cursor: pointer;
+  }
+
+  .main {
+    flex-direction: row;
+    padding: 4rem 6rem;
+    justify-content: center;
+  }
+  .product-image {
+    width: 350px;
+    height: 300px;
+    border-radius: 0.8rem;
+  }
+  article {
+    width: 50%;
+    margin-top: 0;
+    margin-left: 8rem;
+    align-items: flex-start;
+  }
+
+  article p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  .main-heading {
+    font-size: 0.9rem;
+  }
+  .sub-heading {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  .price {
+    display: block;
+    width: 100%;
+  }
+  .quantity {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  .quantity > div {
+    width: 8rem;
+  }
+  .quantity button {
+    margin-top: 0;
+    margin-left: 0.8rem;
+    width: 12rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .desktop-nav {
+    display: flex;
+  }
+  .desktop-nav > div {
+    display: flex;
+  }
+  .desktop-nav ul {
+    display: flex;
+    list-style: none;
+  }
+  .desktop-nav ul li {
+    margin-left: 2rem;
+    font-weight: 600;
+    color: #0000007d;
+    cursor: pointer;
+  }
+
+  .cart-avatar {
+    display: flex;
+  }
+  .left {
+    display: flex;
+    align-items: center;
+  }
+  .left .icon-menu {
+    display: none;
+  }
+  .right {
+    width: 15%;
+  }
+  .right img {
+    margin-right: 0;
+  }
+  .right .avatar {
+    width: 40px;
+  }
+
+  .navigation {
+    display: none;
+  }
+  .sub-product_images {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.2rem;
+  }
+  .sub-product_images img {
+    border-radius: 0.5rem;
+    cursor: pointer;
   }
   .main {
     flex-direction: row;
@@ -283,7 +422,7 @@ button img {
   }
   article p {
     font-size: 1.2rem;
-    line-height: 1.5rem;
+    line-height: 1.7rem;
   }
   .main-heading {
     font-size: 0.9rem;
@@ -309,4 +448,10 @@ button img {
     margin-left: 0.8rem;
     width: 14rem;
   }
+}
+
+.sub-product_images--active {
+  border: 2px solid hsl(26, 100%, 55%);
+  background-color: #ffffff;
+  opacity: 50%;
 }
