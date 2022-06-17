@@ -43,13 +43,40 @@
         </div>
 
         <div class="right">
-          <img src="images/icon-cart-black.svg" />
-          <img class="avatar" src="images/image-avatar.png" width="24" />
+          <div class="cart">
+            <img src="images/icon-cart-black.svg" class="cart-icon" />
+            <div class="quantity-tag"></div>
+          </div>
+
+          <!-- <div class="cart-section">
+            <p>Cart</p>
+
+            <div>
+              <img src="images/image-product-1.jpg" width="24px" />
+              <p>
+                Fall Limited Edition Sneakers<br />
+                $125.00 x 3 $375.00
+              </p>
+
+              <img src="images/icon-delete.svg" class="delete-icon" />
+            </div>
+            <button>Checkout</button>
+          </div> -->
+          <img
+            class="avatar"
+            src="images/iconmonstr-user-20.svg"
+            width="26px"
+          />
         </div>
       </nav>
     </header>
 
     <main>
+      <div class="modal">
+        <p>Added to cart!</p>
+        <img src="images/iconmonstr-check-mark-circle-thin.svg" />
+        <img class="icon-close-modal" src="images/icon-close.svg" />
+      </div>
       <section class="main">
         <div>
           <img
@@ -114,7 +141,7 @@
               <p class="no-items">0</p>
               <img class="icon-plus" src="images/icon-plus.svg" />
             </div>
-            <button>
+            <button class="add-to-cart">
               <img class="cart-icon" src="images/icon-cart.svg" /> Add to cart
             </button>
           </div>

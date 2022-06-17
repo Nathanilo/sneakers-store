@@ -9,21 +9,28 @@ const plusBtn = document.querySelector(".icon-plus");
 const minusBtn = document.querySelector(".icon-minus");
 const numberItems = document.querySelector(".no-items");
 const subImages = document.querySelectorAll(".sub-product_image");
+const quantityTag = document.querySelector(".quantity-tag");
+const addToCartBtn = document.querySelector(".add-to-cart");
+const cart = document.querySelector(".cart-icon");
+const cartSection = document.querySelector(".cart-section");
+const modal = document.querySelector(".modal");
+const closeModal = document.querySelector(".icon-close-modal");
 
 let current = 1;
 
 menuIcon.addEventListener("click", function () {
-  sideBar.classList.toggle("open-sidebar");
+  sideBar.classList.add("open-sidebar");
   backDrop.style.display = "block";
 });
 
 closeIcon.addEventListener("click", function () {
-  sideBar.classList.toggle("open-sidebar");
+  sideBar.classList.remove("open-sidebar");
   backDrop.style.display = "none";
 });
 
 backDrop.addEventListener("click", function () {
-  sideBar.classList.toggle("open-sidebar");
+  sideBar.classList.remove("open-sidebar");
+  modal.classList.remove("open-modal");
   backDrop.style.display = "none";
 });
 
@@ -57,13 +64,8 @@ minusBtn.addEventListener("click", function () {
   if (numberItems.textContent > 0) numberItems.textContent--;
 });
 
-//get image container of main image
-//get image container of sub images
-//add event listeners of click to sub images
 subImages.forEach((subImage) =>
   subImage.addEventListener("click", function (e) {
-    //if sub image is clicked, display sub image as main
-
     const clickedImg = e.target;
     subImages.forEach((subImage) =>
       subImage.classList.remove("sub-product_images--active")
@@ -72,3 +74,26 @@ subImages.forEach((subImage) =>
     productImage.src = clickedImg.src;
   })
 );
+
+addToCartBtn.addEventListener("click", function () {
+  console.log("clicked");
+
+  if (numberItems.textContent > 0) {
+    quantityTag.textContent = "New";
+    quantityTag.style.display = "block";
+    backDrop.style.display = "block";
+    modal.classList.add("open-modal");
+  }
+});
+
+closeModal.addEventListener("click", function () {
+  backDrop.style.display = "none";
+  modal.classList.remove("open-modal");
+  if (modal.classList.remove("open-modal")) {
+    modal.style.display = "none";
+  }
+});
+
+cart.addEventListener("click", function () {
+  cartSection.style.display = "block";
+});
